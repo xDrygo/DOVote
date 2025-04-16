@@ -1,0 +1,29 @@
+prefix: "#ff8300&lDO&r&lVote &8»&r"
+command:
+  reload:
+    success: "%prefix% #a0ff72✔ Plugin recargado."
+    error: "%prefix% #FF0000🚫 Error recargando el plugin."
+  topvotes:
+    header: "%prefix% #ff8300&lTop Votos &r&7(#ccccccPagina: &f%page%&7/#cccccc%total_pages%&7)"
+    invalid_page: "%prefix% #FF0000🚫 Numero de pagina invalido."
+    no_votes: "#FF0000🚫 Ningun jugador ha votado."
+    player: "#bdb055%position%. #fff18d%player_p% &8 &f%votes% votes."
+  reset:
+    success: "%prefix% #a0ff72✔ Se han reseteado los votos."
+  giveitem:
+    other:
+      target: "%prefix% #a0ff72✔ Has recibido el item de votación."
+      sender: "%prefix% #a0ff72✔ El jugador %target% ha recibido el item de votación."
+      all: "%prefix% #a0ff72✔ %players% jugadores han recibido el item de votación."
+    self:
+      sender: "%prefix% #a0ff72✔ Has obtenido el item de votación."
+      only_player: "%prefix% #FF0000🚫 Necesitas estar in-game para recibir tu mismo el item."
+vote:
+  success: "#a0ff72✔ Has votado por %target%."
+
+error:
+  no_permission: "%prefix% #FF0000🚫 No tienes permisos para usar este comando."
+  no_action: "%prefix% #FF0000🚫 Tienes que especificar un sub-comando."
+  invalid_action: "%prefix% #FF0000🚫 Sub-comando invalido."
+
+# #FF0000🚫 #ff7272❌ #fff18d📰 #a0ff72✔

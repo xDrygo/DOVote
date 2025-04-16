@@ -1,0 +1,50 @@
+settings:
+  giveall_bypass_enabled: true
+  debug_messages: true
+  team_of_vote: "VoteTeam"
+  admin_list:
+    - "xDrygo"
+item:
+  material: "PAPER" # Puedes agregarlo en mayus o minusculas ntp
+  name: "&aVote Item" # Puedes usar colores hex como #FF0000, &x&F&F&0&0&0&0 y los normales: &a &c &5 &d
+  lore:
+    - "&7Item para votar de Turtle Club."
+    - "&d&o(Desarrollado por @eldrygo)"
+  enchant: true
+  custom_model_data: 999
+inventory:
+  title: "#00FFFFVotar Jugadoresssss &8- &fPagina: &e%page%"
+  items:
+    head:
+      name: "#FFFABBVotar: &r%player%"
+      lore:
+        - " "
+        - "UN LOREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        - " "
+        - "Jugador a votar: %player%"
+        - " "
+      custom_model_data: 1
+    forwards:
+      material: "SPECTRAL_ARROW"
+      name: "#FF5555&lSiguiente Pagina"
+      lore:
+        - " "
+        - "UN LOREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        - " "
+      custom_model_data: 2
+    backwards:
+      material: "SPECTRAL_ARROW"
+      name: "#FF00FF&lAnterior Pagina"
+      lore:
+        - " "
+        - "UN LOREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        - " "
+      custom_model_data: 3
+    fill:
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      lore:
+        - " "
+        - "UN LOREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        - " "
+      custom_model_data: 4

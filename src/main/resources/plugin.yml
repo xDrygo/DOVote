@@ -1,0 +1,23 @@
+name: DOVote
+main: org.eldrygo.DOVote.DOVote
+version: 0.0.11
+authors:
+  - Drygo
+  - Turtle Club
+api-version: 1.20
+commands:
+  dovote:
+    description: "Main plugin command."
+permissions:
+  dovote.admin:
+    description: "Admin Permission"
+    default: op
+    children:
+      dovote.command.reload:
+        default: op
+      dovote.command.giveitem:
+        default: op
+      dovote.command.reset:
+        default: op
+      dovote.command.top:
+        default: op
