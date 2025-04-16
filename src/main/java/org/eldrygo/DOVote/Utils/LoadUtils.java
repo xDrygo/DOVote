@@ -49,12 +49,12 @@ public class LoadUtils {
     }
 
     private void loadCommands() {
-        if (plugin.getCommand("dovote") == null) {
-            plugin.getLogger().severe("❌ Error: DOVote command is no registered in plugin.yml");
-        } else {
+        if (plugin.getCommand("dovote") != null) {
             plugin.getLogger().info("✅ Plugin command /dovote successfully registered.");
             plugin.getCommand("dovote").setExecutor(new DOVoteCommand(plugin, chatUtils, configManager, itemManager, playerUtils, voteManager));
             plugin.getCommand("dovote").setTabCompleter(new DOVoteTabCompleter());
+        } else {
+            plugin.getLogger().severe("❌ Error: DOVote command is no registered in plugin.yml");
         }
     }
 

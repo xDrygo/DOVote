@@ -21,7 +21,6 @@ import org.eldrygo.DOVote.Utils.PlayerUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class InventoryManager {
     private final DOVote plugin;

@@ -71,10 +71,10 @@ public class SettingsUtils {
         String forwardsID = plugin.getConfig().getString("inventory.items.forwards.material", "SPECTRAL_ARROW").toUpperCase();
         String backwardsID = plugin.getConfig().getString("inventory.items.backwards.material", "SPECTRAL_ARROW").toUpperCase();
         String fillID = plugin.getConfig().getString("inventory.items.fill.material", "BLACK_STAINED_GLASS_PANE").toUpperCase();
-        String headName = plugin.getConfig().getString("inventory.items.head.name");;
-        String forwardsName = plugin.getConfig().getString("inventory.items.forwards.name");;
-        String backwardsName = plugin.getConfig().getString("inventory.items.backwards.name");;
-        String fillName = plugin.getConfig().getString("inventory.items.fill.name");;
+        String headName = plugin.getConfig().getString("inventory.items.head.name");
+        String forwardsName = plugin.getConfig().getString("inventory.items.forwards.name");
+        String backwardsName = plugin.getConfig().getString("inventory.items.backwards.name");
+        String fillName = plugin.getConfig().getString("inventory.items.fill.name");
         List<String> headLore = plugin.getConfig().getStringList("inventory.items.head.lore");
         List<String> forwardsLore = plugin.getConfig().getStringList("inventory.items.forwards.lore");
         List<String> backwardsLore = plugin.getConfig().getStringList("inventory.items.backwards.lore");

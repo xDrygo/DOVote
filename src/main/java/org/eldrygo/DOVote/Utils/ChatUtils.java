@@ -1,6 +1,5 @@
 package org.eldrygo.DOVote.Utils;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.eldrygo.DOVote.DOVote;
@@ -59,12 +58,6 @@ public class ChatUtils {
         } else {
             message = message.replace("%player%", "Unknown");
         }
-
-        /*
-        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-            message = PlaceholderAPI.setPlaceholders(player, message);
-        }
-         */
 
         message = message.replace("%prefix%", configManager.getPrefix());
 

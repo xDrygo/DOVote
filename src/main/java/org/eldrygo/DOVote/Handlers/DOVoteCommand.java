@@ -4,8 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.eldrygo.DOVote.DOVote;
 import org.eldrygo.DOVote.Managers.ConfigManager;
@@ -15,7 +13,6 @@ import org.eldrygo.DOVote.Utils.ChatUtils;
 import org.eldrygo.DOVote.Utils.PlayerUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -57,7 +54,7 @@ public class DOVoteCommand implements CommandExecutor {
                 if (!sender.hasPermission("dovote.top") && !sender.isOp()) {
                     sender.sendMessage(chatUtils.getMessage("error.no_permission", (Player) sender));
                 } else {
-                    return handleTopVotes(sender, args);
+                    handleTopVotes(sender, args);
                 }
             }
             case "reset" -> {
@@ -68,9 +65,7 @@ public class DOVoteCommand implements CommandExecutor {
                 }
             }
             case "giveitem" -> { return handleGiveItem(sender, args); }
-            default -> {
-                sender.sendMessage(chatUtils.getMessage("error.invalid_action", null));
-            }
+            default -> sender.sendMessage(chatUtils.getMessage("error.invalid_action", null));
         }
         return false;
     }
@@ -80,7 +75,7 @@ public class DOVoteCommand implements CommandExecutor {
         sender.sendMessage(chatUtils.getMessage("command.reset.success", null));
     }
 
-    private boolean handleTopVotes(CommandSender sender, String[] args) {
+    private void handleTopVotes(CommandSender sender, String[] args) {
         int page = 1;
         int perPage = 10;
 
@@ -91,7 +86,6 @@ public class DOVoteCommand implements CommandExecutor {
                 if (page < 1) page = 1;
             } catch (NumberFormatException e) {
                 sender.sendMessage(chatUtils.getMessage("commands.topvotes.invalid_page", null));
-                return true;
             }
         }
 
@@ -101,7 +95,6 @@ public class DOVoteCommand implements CommandExecutor {
         // Verificar si hay jugadores votados
         if (topVoted.isEmpty()) {
             sender.sendMessage(chatUtils.getMessage("command.topvotes.no_votes", null));
-            return true;
         }
 
         // Calcular las páginas totales
@@ -124,13 +117,11 @@ public class DOVoteCommand implements CommandExecutor {
                     .replace("%player_p%", entry.getKey())
                     .replace("%votes%", String.valueOf(entry.getValue())));
         }
-
-        return true;
     }
 
     private boolean handleGiveItem(CommandSender sender, String[] args) {
         if (args.length == 1) {
-            if (!(sender instanceof Player)) {
+            if (!(sender instanceof Player player)) {
                 sender.sendMessage(chatUtils.getMessage("command.giveitem.self.only_player", null));
                 return true;
             }
@@ -138,7 +129,6 @@ public class DOVoteCommand implements CommandExecutor {
                 sender.sendMessage(chatUtils.getMessage("error.no_permission", (Player) sender));
                 return true;
             }
-            Player player = (Player) sender;
             itemManager.giveVoteItem(player);
             player.sendMessage(chatUtils.getMessage("command.giveitem.self.sender", player));
             return true;

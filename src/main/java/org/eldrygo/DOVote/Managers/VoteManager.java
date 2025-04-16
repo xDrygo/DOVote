@@ -2,11 +2,8 @@ package org.eldrygo.DOVote.Managers;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.eldrygo.DOVote.DOVote;
-import org.eldrygo.DOVote.Utils.ChatUtils;
-import org.eldrygo.DOVote.Utils.SettingsUtils;
 
 import java.io.*;
 import java.util.*;
@@ -31,7 +28,7 @@ public class VoteManager {
     }
 
     // Registrar un voto
-    public boolean registerVote(Player from, Player to) {
+    public void registerVote(Player from, Player to) {
         String fromName = from.getName();
         String toName = to.getName();
 
@@ -50,7 +47,6 @@ public class VoteManager {
         // Guardar los votos en el archivo JSON después de cada registro
         saveVotes();
 
-        return true;
     }
 
     // Resetear todos los votos
